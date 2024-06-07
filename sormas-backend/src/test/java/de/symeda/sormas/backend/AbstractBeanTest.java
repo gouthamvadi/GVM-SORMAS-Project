@@ -221,6 +221,7 @@ import de.symeda.sormas.backend.sample.PathogenTestService;
 import de.symeda.sormas.backend.sample.SampleFacadeEjb.SampleFacadeEjbLocal;
 import de.symeda.sormas.backend.sample.SampleService;
 import de.symeda.sormas.backend.selfreport.SelfReportFacadeEjb.SelfReportFacadeEjbLocal;
+import de.symeda.sormas.backend.selfreport.SelfReportService;
 import de.symeda.sormas.backend.share.ExternalShareInfoFacadeEjb.ExternalShareInfoFacadeEjbLocal;
 import de.symeda.sormas.backend.share.ExternalShareInfoService;
 import de.symeda.sormas.backend.sormastosormas.SormasToSormasFacadeEjb.SormasToSormasFacadeEjbLocal;
@@ -899,7 +900,7 @@ public abstract class AbstractBeanTest {
 	}
 
 	public QuarantineOrderFacade getQuarantineOrderFacade() {
-		return getBean(QuarantineOrderFacadeEjb.class);
+		return getBean(QuarantineOrderFacadeEjb.QuarantineOrderFacadeEjbLocal.class);
 	}
 
 	public EventDocumentFacade getEventDocumentFacade() {
@@ -1081,5 +1082,9 @@ public abstract class AbstractBeanTest {
 
 	public SelfReportFacadeEjbLocal getSelfReportFacade() {
 		return getBean(SelfReportFacadeEjbLocal.class);
+	}
+
+	public SelfReportService getSelfReportService() {
+		return getBean(SelfReportService.class);
 	}
 }
